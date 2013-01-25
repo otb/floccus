@@ -1,24 +1,26 @@
 # Floccus
 
-TODO: Write a gem description
+![alt text](http://upload.wikimedia.org/wikipedia/commons/e/e3/Clouds_H2.svg "Floccus")
+
+A sane and tidy way to manage files in the cloud.
+
+'Floccus' is a type of cirrus cloud that resembles the pattern above: http://en.wikipedia.org/wiki/Cirrus_floccus
+
+
+## Roadmap
+
+* .flocrc - a config file for your Clouds.  Will also support environement variables.
+* Multiple cloud backends (right now it only crudely supports 's3cmd')
+
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'floccus'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
 
     $ gem install floccus
 
 ## Usage
 
-TODO: Write usage instructions here
+	floc image.jpg
+	-> public URL: http://your-cloud.com/24894781b632f6b3e805dae60e2d8c46-image.jpg
 
 ## Contributing
 
