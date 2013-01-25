@@ -6,7 +6,7 @@ require 'floccus'
 HighLine.track_eof = false
 
 program :version, Floccus::VERSION
-program :description, 'CLI for customizing new Xcode projects'
+program :description, 'A high level layer for managing your clouds.'
 
 program :help, 'Authors', 'Owen Bossola <owen@bosso.la>'
 program :help, 'Website', 'http://owen.bosso.la'

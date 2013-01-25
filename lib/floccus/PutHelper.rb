@@ -1,13 +1,13 @@
-class PushHelper
+class PutHelper
   
   SLASH = "/"
 
   # Setup
   #
   def initialize
-    @filename = ARGV[0]
-    @s3_url = ARGV[1]
-    @options = ARGV[2..-1]
+    @filename = ARGV[1]
+    @s3_url = ARGV[2]
+    @options = ARGV[3..-2]
     @use_local_filename = @s3_url[-1] == SLASH
   end
 

@@ -1,6 +1,6 @@
 require 'commander/import'
 require 'digest/md5'
-require 'floccus/push_helper'
+require 'floccus/put_helper'
 require 'floccus/commands'
 
 module Floccus
