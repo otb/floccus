@@ -1,4 +1,4 @@
-command :push do |c|
+command :put do |c|
   c.syntax = 'floccus put'
   c.summary = 'Put a file to the cloud.'
   c.description = ''
