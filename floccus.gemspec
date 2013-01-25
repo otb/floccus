@@ -6,8 +6,8 @@ require 'floccus'
 Gem::Specification.new do |gem|
   gem.authors       = ["Owen Bossola"]
   gem.email         = ["owen.bossola@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Write a gem description}
+  gem.summary       = %q{Write a gem summary}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($\)
