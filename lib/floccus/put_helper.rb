@@ -40,7 +40,7 @@ module Floccus
 
     # Run the full command
     #
-    def run!
+    def run
       system "s3cmd put #{@filename} #{hashed_s3_url} -P"
     end
   end

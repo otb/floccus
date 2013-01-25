@@ -8,8 +8,8 @@ HighLine.track_eof = false
 program :version, Floccus::VERSION
 program :description, 'A high level layer for managing your clouds.'
 
-program :help, 'Authors', 'Owen Bossola <owen@bosso.la>'
-program :help, 'Website', 'http://owen.bosso.la'
+program :help, 'Authors', 'Owen Bossola <owen.bossola@gmail.com>'
+program :help, 'Website', 'http://floccus.org'
 program :help_formatter, :compact
 
 default_command :all

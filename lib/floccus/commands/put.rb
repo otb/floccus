@@ -4,5 +4,6 @@ command :put do |c|
   c.description = ''
 
   c.action do
-    PutHelper.new(*ARGV).run!
+    Floccus::PutHelper.new(*ARGV).run
+  end
 end

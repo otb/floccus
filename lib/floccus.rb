@@ -6,4 +6,3 @@ require 'floccus/commands'
 module Floccus
   VERSION = "0.0.1"
 end
-
