@@ -9,8 +9,9 @@ A sane and tidy way to manage files in the cloud.
 
 ## Roadmap
 
-* .flocrc - a config file for your Clouds.  Will also support environement variables.
-* Multiple cloud backends (right now it only crudely supports 's3cmd')
+* Setup command for .flocrc - a config file for S3 credentials and default bucket.
+* Domain aliases instead of default from S3
+* Multiple cloud backends (right now only supports S3)
 
 
 ## Installation
@@ -21,6 +22,8 @@ A sane and tidy way to manage files in the cloud.
 
 	floc image.jpg
 	-> public URL: http://your-cloud.com/24894781b632f6b3e805dae60e2d8c46-image.jpg
+
+And the public URL is also copied to your clipboard.
 
 ## Contributing
 
