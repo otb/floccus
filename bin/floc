@@ -12,4 +12,4 @@ program :help, 'Authors', 'Owen Bossola <owen.bossola@gmail.com>'
 program :help, 'Website', 'http://floccus.org'
 program :help_formatter, :compact
 
-default_command :all
+default_command :put

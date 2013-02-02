@@ -1,47 +1,38 @@
 module Floccus
   class PutHelper
-    
-    SLASH = "/"
+
+    KB = 1024
 
     # Setup
     #
     def initialize(*args)
-      @filename = args[1]
-      @s3_url = args[2]
-      @options = args[3..-2]
-      @use_local_filename = @s3_url[-1] == SLASH
-    end
-
-    # Generate a hashed filename based on the contents
-    #
-    # Returns the hash followed by the filename
-    def hashed_filename(upload_filename)
-      file_path = File.expand_path(@filename)
-      contents = File.read(file_path)
-      hash = Digest::MD5.hexdigest(contents)
-         
-      "#{hash}-#{upload_filename}"
-    end
-
-    # Return a new S3 URL with the hashed filename
-    #
-    # Support URLs that teriminate in slashes or filenames
-    def hashed_s3_url
-      if @use_local_filename
-        upload_filename = @filename.split(SLASH).last
-
-        "#{@s3_url}#{hashed_filename(upload_filename)}"
-      else
-        upload_filename = @s3_url.split(SLASH).last
-
-        @s3_url.sub(upload_filename, hashed_filename(upload_filename))
-      end
+      @filename = args[0]
+      @hashed_filename = Floccus::Filename.generate(@filename)
+      @cloud = Floccus::Cloud.new
+      @s3 = @cloud.s3
     end
 
     # Run the full command
     #
     def run
-      system "s3cmd put #{@filename} #{hashed_s3_url} -P"
+      file = open(@filename)
+
+      # Instantiate a Progress Bar
+      total_blocks = (file.size / KB).to_i  + 2
+      progressbar = ProgressBar.create total: total_blocks
+
+      object = @s3.buckets[@cloud.default_bucket].objects[@hashed_filename]
+
+      object.write(content_length: file.size, acl: :public_read) do |buffer, bytes|
+        buffer.write(file.read(bytes))
+        
+        progressbar.increment
+      end
+
+      file.close
+
+      system "echo #{object.public_url } | pbcopy"
+      puts "---> #{object.public_url}"
     end
   end
 end

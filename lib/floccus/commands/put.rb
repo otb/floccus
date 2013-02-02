@@ -1,5 +1,5 @@
 command :put do |c|
-  c.syntax = 'floc put'
+  c.syntax = 'floc'
   c.summary = 'Put a file to the cloud.'
   c.description = ''
 
