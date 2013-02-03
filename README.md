@@ -15,7 +15,7 @@ A sane and tidy way to manage files in the cloud.
 
 Create the file ```~/.floccfg``` with your AWS keys and default bucket.
 
-	# Flocrc
+	# Floccfg
 	access_key_id: 'aws-key'            # required, your AWS Access ID
 	secret_access_key: 'aws-secret'     # required, your AWS Secret Key
 	default_bucket: 'default-bucket'    # required, the bucket to place files in
