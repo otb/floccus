@@ -21,8 +21,10 @@ module Floccus
       total_blocks = (file.size / KB).to_i  + 2
       progressbar = ProgressBar.create total: total_blocks
 
-      object = @s3.buckets[@cloud.default_bucket].objects[@hashed_filename]
+      # Create the object
+      object = @s3.buckets[@cloud.bucket].objects[@hashed_filename]
 
+      # Write the file
       object.write(content_length: file.size, acl: :public_read) do |buffer, bytes|
         buffer.write(file.read(bytes))
         
@@ -31,8 +33,19 @@ module Floccus
 
       file.close
 
-      system "echo #{object.public_url } | pbcopy"
-      puts "---> #{object.public_url}"
+      public_url = if @cloud.use_domain?
+                     obj = object.public_url
+                     obj.scheme = "http"
+                     obj.host = @cloud.domain
+                     obj.path = obj.path.gsub("/#{@cloud.bucket}", "")
+                     obj
+                   else
+                     object.public_url
+                   end
+
+      # Echo the results
+      system "echo #{public_url} | pbcopy"
+      puts "---> #{public_url}"
     end
   end
 end
