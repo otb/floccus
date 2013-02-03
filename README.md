@@ -18,6 +18,17 @@ A sane and tidy way to manage files in the cloud.
 
     $ gem install floccus
 
+## Setup
+
+Create the file ```~/.flocrc``` with your AWS keys and default bucket.
+
+```
+# Flocrc
+access_key_id: 'aws-key'
+secret_access_key: 'aws-secret'
+default_bucket: 'default-bucket'
+```
+
 ## Usage
 
 	floc image.jpg
