@@ -5,10 +5,10 @@ require 'floccus'
 
 Gem::Specification.new do |gem|
   gem.authors       = ["Owen Bossola"]
-  gem.email         = ["owen.bossola@gmail.com"]
-  gem.description   = %q{Write a gem description}
-  gem.summary       = %q{Write a gem summary}
-  gem.homepage      = "http://floccus.org"
+  gem.email         = ["owen@bosso.la"]
+  gem.description   = %q{A sane and tidy way to manage files in the cloud.}
+  gem.summary       = %q{Remove the need to remember filenames, paths, or buckets.  All that's left is files and URLs.}
+  gem.homepage      = "http://owenbossola.com/floccus"
 
   # gem.add_dependency 'commander', '~> 4.1.3'
   # gem.add_dependency 'aws-sdk', '~> 1.8.1.1'

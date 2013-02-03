@@ -6,10 +6,10 @@ require 'floccus'
 HighLine.track_eof = false
 
 program :version, Floccus::VERSION
-program :description, 'A high level layer for managing your clouds.'
+program :description, 'A sane and tidy way to manage files in the cloud.'
 
-program :help, 'Authors', 'Owen Bossola <owen.bossola@gmail.com>'
-program :help, 'Website', 'http://floccus.org'
+program :help, 'Authors', 'Owen Bossola <owen@bosso.la>'
+program :help, 'Website', 'http://owenbossola.com/floccus'
 program :help_formatter, :compact
 
 default_command :put
