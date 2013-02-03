@@ -3,7 +3,7 @@ module Floccus
 
     CONFIG_PATH = "#{ENV['HOME']}/.flocrc"
 
-    def initialize(config={})
+    def initialize
       config = YAML.load(File.read(CONFIG_PATH))
 
       AWS.config(
